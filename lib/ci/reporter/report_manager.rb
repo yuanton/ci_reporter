@@ -14,6 +14,7 @@ module CI #:nodoc:
       end
       
       def write_report(suite)
+        FileUtils.mkdir_p(@basedir)
         File.open(filename_for(suite), "w") do |f|
           f << suite.to_xml
         end
